@@ -1,1 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+h2 {
+  color: #444;
+}
+
+h3 {
+  color: #555;
+  margin-top: 20px;
+}
+
+.rate {
+  color: #b22222;
+}
+
+p {
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+form {
+  margin-top: 10px;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 80px;
+  margin: 5px;
+}
 
