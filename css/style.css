@@ -1,45 +1,100 @@
 /* ------------------------------
-   THE GLOBAL PAGE STYLES
+   GLOBAL RESET + BOX MODEL FIX
+--------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+/* ------------------------------
+   GLOBAL PAGE STYLES
 --------------------------------*/
 body {
   font-family: Arial, sans-serif;
-  background-color: #fdf8f2;
+  background-color: #775ecf;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  line-height: 1;
 }
 
-/* Center all main headings */
+/* Headings */
 h1, h2 {
   color: #8b3a0e;
   text-align: center;
 }
 
 /* ------------------------------
-   FLEXBOX LAYOUT
+   CA5 LAYOUT STRUCTURE
 --------------------------------*/
-.wrapper {
-  display: flex;
-  padding: 20px;
-  gap: 20px;
+#container {
+  width: 95%;
+  max-width: 1200px;   /* <-- prevents layout collapse */
+  margin: auto;
 }
 
-/* Each box inside a wrapper */
-.wrapper div {
-  flex: 1;
-  padding: 20px;
+/* ROWS */
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;      /* <-- prevents stacking */
+  width: 100%;
+  margin-bottom: 20px;
+}
 
-  /* TURN THIS ON WHILE BUILDING. TURN OFF AFTER */
- /* NOTE: I am choosing to not turn this off. Using it as a design element. */
-  border: double cornflowerblue;
+/* FULL-WIDTH CELLS (HEADER + FOOTER) */
+.full {
+  width: 100%;
+  padding: 20px;
+  background: #f3e5d0;
+  /* border: double cornflowerblue; */
+}
+
+/* COLUMNS */
+.col {
+  padding: 5px;
+  background: #fff;
+  /*border: double cornflowerblue;*/
+  flex: 0 0 auto;         /* <-- allows width to work */
+  margin: 0;          /* <-- reduced so columns fit */
+  min-width: 160px;       /* <-- prevents shrinking */
+}
+
+/* ------------------------------
+   ROW 2 COLUMN WIDTHS
+--------------------------------*/
+#links { width: 32%; }
+#picture { width: 32%; }
+#rating { width: 32%; }
+
+/* ------------------------------
+   ROW 3 COLUMN WIDTHS
+--------------------------------*/
+#ingredients,
+#equipment,
+#directions {
+  width: 32%;            
+}
+
+/* ------------------------------
+   IMAGE + CAPTION
+--------------------------------*/
+.recipe-img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.caption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 8px;
 }
 
 /* ------------------------------
    RATE THIS RECIPE
 --------------------------------*/
-.rate {
+.rate, #rating h2 {
   color: #b22222;
-  text-align: center;
+  text-align: left;
 }
 
 fieldset {
@@ -63,23 +118,26 @@ input[type="number"] {
 }
 
 /* ------------------------------
-   INGREDIENTS + DIRECTIONS
+   LIST STYLING
 --------------------------------*/
 ul {
   list-style-type: square;
   margin-left: 20px;
+  line-height: 1.8;
 }
 
 ol {
-  margin-left: 20px;
+  margin-left: 5px;
 }
 
 /* ------------------------------
    FOOTER
 --------------------------------*/
-footer {
+#footer {
   text-align: center;
   padding: 20px;
   color: #444;
   font-size: 0.9em;
+  background: #f3e5d0;
+  /*border: double cornflowerblue;*/
 }
